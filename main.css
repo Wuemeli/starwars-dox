@@ -79,6 +79,7 @@ p {
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
+#confirm-no,
 #confirm-yes {
     background-color: #FFFF82;
     color: black;
@@ -91,6 +92,7 @@ p {
     transition: background-color 0.3s ease;
 }
 
+#confirm-no:hover,
 #confirm-yes:hover {
     background-color: #FFD700;
 }
