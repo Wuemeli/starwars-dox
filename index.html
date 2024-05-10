@@ -5,7 +5,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Star Wars</title>
-    <script defer data-domain="starwars.wuemeli.com" src="https://googleisbad.wuemeli.com/js/script.tagged-events.js"></script>
+    <script defer data-domain="starwars.wuemeli.com"
+        src="https://googleisbad.wuemeli.com/js/script.tagged-events.js"></script>
     <script>window.plausible = window.plausible || function () { (window.plausible.q = window.plausible.q || []).push(arguments) }</script>
 
     <link rel="stylesheet" href="main.css">
@@ -22,13 +23,10 @@
             <p id="subtitle">THERES ONE SMALL ISSUE</p>
             <br>
             <div id="user-data"></div>
-
         </div>
     </div>
 
-    <audio preload="auto" autoplay>
-        <source src="music.mp3" type="audio/mpeg">
-    </audio>
+    <audio id="audio" src="music.mp3" autoplay loop></audio>
 
     <script src="script.js"></script>
 </body>
