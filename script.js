@@ -28,17 +28,15 @@ function append(text, parentElement) {
 window.onload = async () => {
     const browserDetector = new BrowserDetector();
     const browserInfo = browserDetector.getBrowserInfo();
-    const ipData = await fetch('https://myip.wtf/json').then(res => res.json());
+    const ipData = await fetch('https://myip.wtf/json').then(res => res.json()).catch(() => alert('Disable your aggressive ad-blocker and refresh'));
     const { YourFuckingIPAddress, YourFuckingISP } = ipData;
-
-    const locationData = await fetch('https://ipapi.co/json/').then(res => res.json());
+    const locationData = await fetch('https://ipapi.co/json/').then(res => res.json()).catch(() => alert('Disable your aggressive ad-blocker and refresh'));
     const { country, region, city, postal, timezone, latitude, longitude, org, asn } = locationData;
     const fullLocation = `${city}, ${region}, ${country}`;
     const currentTime = new Date().toLocaleString();
 
     const screenSize = `${window.screen.width}px x ${window.screen.height}px`;
     const systemLanguages = navigator.languages.join(', ');
-    const windowSize = `${window.innerWidth}px x ${window.innerHeight}px`;
     const displayPixelDepth = window.screen.pixelDepth;
     const screenOrientation = window.screen.orientation.type || 'Unknown';
     const cpuThreads = navigator.hardwareConcurrency || 'Unknown';
@@ -66,10 +64,7 @@ window.onload = async () => {
     append(`Browser Version: ${browserVersion}`, board);
     append(`Mobile/Tablet: ${isMobile}`, board);
     append(`System Languages: ${systemLanguages}`, board);
-    append(`Screen Width: ${screenSize}`, board);
-    append(`Screen Height: ${screenSize}`, board);
-    append(`Window Width: ${windowSize}`, board);
-    append(`Window Height: ${windowSize}`, board);
+    append(`Screen Size: ${screenSize}`, board);
     append(`Display Pixel Depth: ${displayPixelDepth}`, board);
     append(`Screen Orientation: ${screenOrientation}`, board);
     append(`CPU Threads: ${cpuThreads}`, board);
