@@ -26,6 +26,8 @@ document.addEventListener('DOMContentLoaded', function () {
 
     function showContent() {
         plausible("Yes");
+        const audio = document.getElementById('audio');
+        audio.play();
         document.documentElement.requestFullscreen().catch(console.error);
         document.getElementById('star-field').style.display = 'block';
         document.getElementById('board').style.display = 'block';
